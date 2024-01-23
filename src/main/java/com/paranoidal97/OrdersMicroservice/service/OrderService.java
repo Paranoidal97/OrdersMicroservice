@@ -15,5 +15,5 @@ public interface OrderService {
 
     public OrderResponseDto createOrder(OrderRequestDto order);
 
-    public OrderResponseDto changeStatus(Long id,OrderStatus orderStatus);
+    public OrderResponseDto changeStatus(Long id, OrderStatus orderStatus);
 }

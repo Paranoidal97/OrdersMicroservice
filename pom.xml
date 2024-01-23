@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.paranoidal97</groupId>
-	<artifactId>OrdersMicroservice</artifactId>
+	<artifactId>orders-microservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>OrdersMicroservice</name>
 	<description>Microservice for orders</description>

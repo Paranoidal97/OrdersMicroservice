@@ -1,6 +1,9 @@
 package com.paranoidal97.OrdersMicroservice.exception.handler;
 
-import com.paranoidal97.OrdersMicroservice.exception.*;
+import com.paranoidal97.OrdersMicroservice.exception.BadRequestException;
+import com.paranoidal97.OrdersMicroservice.exception.DataAlreadyExistException;
+import com.paranoidal97.OrdersMicroservice.exception.DataNotFoundException;
+import com.paranoidal97.OrdersMicroservice.exception.IllegalApointmentTransition;
 import com.paranoidal97.OrdersMicroservice.model.dto.MessageDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

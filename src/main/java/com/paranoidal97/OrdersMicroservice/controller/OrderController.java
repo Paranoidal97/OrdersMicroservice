@@ -2,7 +2,6 @@ package com.paranoidal97.OrdersMicroservice.controller;
 
 import com.paranoidal97.OrdersMicroservice.model.dto.OrderRequestDto;
 import com.paranoidal97.OrdersMicroservice.model.dto.OrderResponseDto;
-import com.paranoidal97.OrdersMicroservice.model.entity.Order;
 import com.paranoidal97.OrdersMicroservice.model.enums.OrderStatus;
 import com.paranoidal97.OrdersMicroservice.service.impl.OrderServiceImpl;
 import lombok.RequiredArgsConstructor;
@@ -15,28 +14,29 @@ import java.util.List;
 @RequiredArgsConstructor
 public class OrderController {
     public final OrderServiceImpl orderService;
-    @PostMapping
-    public OrderResponseDto createOrder(OrderRequestDto order){
-        return orderService.createOrder(order);
-    }
 
     @GetMapping
-    public List<OrderResponseDto> getAllOrders(){
+    public List<OrderResponseDto> getAllOrders() {
         return orderService.getAllOrders();
     }
 
-    @GetMapping("/id/{id}")
-    public OrderResponseDto getOrderById(@PathVariable Long id){
+    @GetMapping("/{id}")
+    public OrderResponseDto getOrderById(@PathVariable Long id) {
         return orderService.getOrderById(id);
     }
 
-    @GetMapping("/user/{id}")
-    public List<OrderResponseDto> getAllOrdersByUser(@PathVariable Long id){
+    @GetMapping("/{id}/user")
+    public List<OrderResponseDto> getAllOrdersByUser(@PathVariable Long id) {
         return orderService.getAllOrdersByUser(id);
     }
 
+    @PostMapping
+    public OrderResponseDto createOrder(@RequestBody OrderRequestDto order) {
+        return orderService.createOrder(order);
+    }
+
     @PatchMapping("/{id}")
-    public OrderResponseDto changeStatus(@PathVariable Long id, @RequestBody OrderStatus orderStatus){
+    public OrderResponseDto changeStatus(@PathVariable Long id, @RequestParam OrderStatus orderStatus) {
         return orderService.changeStatus(id, orderStatus);
     }
 

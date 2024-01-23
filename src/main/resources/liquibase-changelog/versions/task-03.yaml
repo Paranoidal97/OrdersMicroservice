@@ -4,19 +4,22 @@ databaseChangeLog:
       author: paranoidal97
       changes:
         - createTable:
-            tableName: CLIENT
+            tableName: ORDERS
             columns:
               - column:
                   autoIncrement: true
                   constraints:
                     nullable: false
                     primaryKey: true
-                    primaryKeyName: client_id
+                    primaryKeyName: order_id
                   name: id
                   type: BigInt
               - column:
-                  name: name
-                  type: varchar(255)
+                  name: cart_id
+                  type: BigInt
               - column:
-                  name: surname
-                  type: varchar(255)
+                  name: user_id
+                  type: BigInt
+              - column:
+                  name: status
+                  type: varchar(20)

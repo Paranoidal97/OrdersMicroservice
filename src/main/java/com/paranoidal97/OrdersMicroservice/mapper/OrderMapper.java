@@ -9,5 +9,6 @@ import org.mapstruct.ReportingPolicy;
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, unmappedSourcePolicy = ReportingPolicy.IGNORE, componentModel = "spring")
 public interface OrderMapper {
     Order toEntity(OrderRequestDto order);
+
     OrderResponseDto toDto(Order order);
 }
