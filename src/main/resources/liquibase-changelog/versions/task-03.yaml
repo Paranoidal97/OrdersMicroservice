@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: paranoidal97
+      changes:
+        - createTable:
+            tableName: ORDERS
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: order_id
+                  name: id
+                  type: BigInt
+              - column:
+                  name: cart_id
+                  type: BigInt
+              - column:
+                  name: user_id
+                  type: BigInt
+              - column:
+                  name: status
+                  type: varchar(20)
